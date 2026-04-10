@@ -27,9 +27,6 @@ A web-based AI data analyst that chats over a marketing dataset, executes Python
 
 Detailed request flow is documented in [`SEQUENCE_DIAGRAM.md`](./SEQUENCE_DIAGRAM.md).
 
-https://mermaid.live/edit#pako:eNp9Vl1P4zoQ_StWnlpRmsJttzQPSFCg2itY0BZeVkjBTYbUF8f22k6XXsR_vzNO0pav24cmtufMx5k5Vl6iTOcQJZGD3xWoDM4ELywv7xXDH6-8VlW5AFuvDbdeZMJw5dkd447duc-OLs7p7MJq5UHlrPPw2LzG3Jj-P-6h-xFzcvM9gLjz9Np54EYEc7P-zHw6J-vpkns2B7sSGTSQDLdSV299gZ0R9JKrYma5WSKuoGcc_tNFJWQO9gvoCUFPCsBXDEdPF4fHF_aXl1dtnjOrf7MrJFt-NLslo5u1X2rFbrWW6Nzjw8XwDFnlhVYprb8IchG4uJHas-vKm8o38NTgVqrDVvwZ8Po0IK8XxBdfCCn8GrF6dx17yzOhii9in52ShzPulgvNLfU6b9-pFda7BlhDf2gPTK_A4owk7LsSXnCJDgtgeyznnjOpeV7bXpzvHx_jLCRsdn7L4noT1_u4TWihcnjuL30pW-_vEDQOm2y28OPjs9OEhT6nm-PU8DWF7jQ1np3ut76ejHCYXV3Nhyw2Htjf8-sf_5OJ1IWLjTAghQLGURfbbeIYHOsYLfG06O4mi01KmAWep2Ta6ff7zTEebHJ8FNKDhZyRzYccafNNets23PXIIOjI0g3gfG1x10Dn1aIUnpXgHDWps8e0oXnErjmQkHmMGZhhGUn82XffE3BzPW8YIGnuVjbFwozVWLlLKxy5tImyU-N03jLgwKeBprQJhC3ButKW0dh5zGIHNUtYUHRfqJV-gg6ee9gM4ozSa6cgKLhTkjZTxUvoMUw3fYJ1F4M08CY31_YG8SjuJCg841KyP8IvmVs7DyVVVRrKMKi4jcmlr9Ud7BVADs1Y0g8doc9bpCTcA2ktfW07dEF3t3a3tVWusyfsn61UCyC7DSpZHbyFXCCHc76Cplu6uSiMKmKS0JsAbW2UPY6FqzBx5C9HUAzWahuHm8Vwv2xweLe3VVIdNbncOYGsKx8HRy2DLYF1jyqDsschCu1pe9MMRx16p6e0ia3HMfBb72k7DejAebZJ7f0Ehf6yRmp77bjj3JZGQht7utXU2wC9reMeDiOeIeUi_6A1ktJPcEYrh3L51Edl5a6L7ptLI4jOo95LVkMscouNJiQTJRKI2MoYjU0EJblFVWJlXEa9qLAijxJvK-hFJdiS0zJ6Ie_3kV9CCfdRgq85PHIiNrpXrwjDi_yX1mWLtLoqllHyyKXDVd2f5qtgYxJymupK-Sj562gcfETJS_QcJd9G_cFkOBwMjw6G4_HwWy9aR8nhuD8Zjiajg-Hh4WAyGkwOX3vRvyHooD8ZDMbjo8FweDQaj0ejYS-CXOAMX9VfJuED5fU_ArjRkg
-
-
 1. Frontend sends `POST /api/chat` with user message and optional selected chart context.
 2. API calls `process_user_message(...)`.
 3. Chat service invokes LangGraph, which invokes the agent + LLM.
@@ -99,12 +96,6 @@ python -m venv .venv
 
 ```bash
 pip install -r requirements.txt
-```
-
-If you hit missing package errors for LLM stack modules, install:
-
-```bash
-pip install langchain langgraph langchain-groq python-dotenv
 ```
 
 ### 3) Configure environment
