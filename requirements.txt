@@ -1,0 +1,12 @@
+pandas
+numpy
+matplotlib
+seaborn
+plotly
+kaleido
+fastapi
+uvicorn
+langchain 
+langgraph 
+langchain-groq 
+python-dotenv

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Data Analyst</title>
+  <link rel="stylesheet" href="/frontend/styles.css?v=20260410a" />
+</head>
+<body>
+  <aside class="chat-app">
+    <header class="chat-header">
+      <h1>AI Data Analyst</h1>
+      <div class="chat-header-controls">
+        <label class="chat-header-field">
+          <span>Model</span>
+          <select id="model-select">
+            <option value="llama-3.1-8b-instant">llama-3.1-8b-instant</option>
+            <option value="llama-3.3-70b-versatile">llama-3.3-70b-versatile</option>
+            <option value="openai/gpt-oss-120b" selected>openai/gpt-oss-120b</option>
+            <option value="openai/gpt-oss-20b">openai/gpt-oss-20b</option>
+            <option value="groq/compound">groq/compound</option>
+            <option value="groq/compound-mini">groq/compound-mini</option>
+          </select>
+        </label>
+        <label class="chat-header-field">
+          <span>API Key</span>
+          <input id="api-key-input" type="password" placeholder="Enter API key (optional)" autocomplete="off" />
+        </label>
+      </div>
+    </header>
+
+    <div class="chat-panel-wrap">
+      <div id="selected-chart-chat-pill" class="selected-chart-chat-pill">Chart context: None selected</div>
+      <section id="chat-panel" class="chat-panel" aria-live="polite"></section>
+    </div>
+
+    <form id="chat-form" class="chat-form">
+      <textarea
+        id="message-input"
+        placeholder="Ask a question about the dataset..."
+        rows="3"
+        required
+      ></textarea>
+      <button id="send-button" type="submit">Send</button>
+      <button id="stop-button" type="button" hidden>Stop</button>
+    </form>
+  </aside>
+
+  <main class="workspace">
+    <div class="workspace-inner">
+      <div class="tab-bar" role="tablist" aria-label="Log tabs">
+        <button id="tab-dashboard" class="tab-button active" type="button" role="tab" aria-selected="true">
+          Dashboard
+        </button>
+        <button id="tab-pipeline" class="tab-button" type="button" role="tab" aria-selected="false">
+          Pipeline Logs
+        </button>
+        <button id="tab-traces" class="tab-button" type="button" role="tab" aria-selected="false">
+          Model Traces
+        </button>
+        <a class="groq-badge" href="https://groq.com" target="_blank" rel="noopener noreferrer">
+          <img
+            src="https://console.groq.com/powered-by-groq-dark.svg"
+            alt="Powered by Groq for fast inference."
+          />
+        </a>
+      </div>
+
+      <section id="panel-dashboard" class="tab-panel active" role="tabpanel">
+        <div class="dashboard-layout">
+          <section id="kpi-grid" class="kpi-grid"></section>
+          <section id="dashboard-chart-grid" class="dashboard-chart-grid"></section>
+        </div>
+      </section>
+      <section id="panel-pipeline" class="tab-panel" role="tabpanel">
+        <pre id="pipeline-log-view" class="log-view">No pipeline logs yet.</pre>
+      </section>
+      <section id="panel-traces" class="tab-panel" role="tabpanel">
+        <div id="trace-log-view" class="trace-view">No model traces yet.</div>
+      </section>
+    </div>
+  </main>
+
+  <div id="chat-plot-modal" class="chat-plot-modal hidden" aria-hidden="true">
+    <div id="chat-plot-modal-backdrop" class="chat-plot-modal-backdrop"></div>
+    <div class="chat-plot-modal-card" role="dialog" aria-modal="true" aria-label="Enlarged chat plot">
+      <button id="chat-plot-modal-close" class="chat-plot-modal-close" type="button" aria-label="Close enlarged plot">
+        x
+      </button>
+      <img id="chat-plot-modal-image" class="chat-plot-modal-image" alt="Enlarged chat plot" />
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-2.35.2.min.js"></script>
+  <script src="/frontend/app.js?v=20260410a"></script>
+</body>
+</html>
