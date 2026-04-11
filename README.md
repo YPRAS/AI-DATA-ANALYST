@@ -35,6 +35,12 @@ Detailed request flow is documented in [`SEQUENCE_DIAGRAM.md`](./SEQUENCE_DIAGRA
 6. Response returns as `assistant_text` + optional `plot_url`.
 7. Frontend renders answer, plot, dashboard updates, and logs.
 
+## Dataset
+https://www.kaggle.com/datasets/ziya07/advertising-campaign-dataset
+
+## Model interface
+https://console.groq.com/home
+
 ## Project Structure
 
 ```text
